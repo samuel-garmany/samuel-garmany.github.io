@@ -1,1 +1,0 @@
-# samuel-garmany.github.io
