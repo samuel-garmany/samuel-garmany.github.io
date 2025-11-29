@@ -21,7 +21,7 @@
     max-width: 600px;
 }
 
-.social-links {
+.button-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -39,7 +39,7 @@
         width: 180px;
     }
 
-    .social-links {
+    .button-group {
         justify-content: center;
     }
 }
