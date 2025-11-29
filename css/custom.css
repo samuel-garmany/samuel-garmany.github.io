@@ -4,18 +4,14 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 3rem;
-    padding-top: 5vh;
-    padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 5vh 2rem 2rem;
 }
 
 .profile-pic {
     border-radius: 50%;
     width: 250px;
-    height: 250px;
+    aspect-ratio: 1;
     object-fit: cover;
-    flex-shrink: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border: 3px solid var(--primary);
 }
@@ -23,27 +19,24 @@
 .profile-text {
     flex: 1;
     max-width: 600px;
-    min-width: 280px;
 }
 
 .social-links {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
     margin-top: 1.5rem;
-    align-items: center;
 }
 
 @media (max-width: 768px) {
     .profile-header {
+        flex-direction: column;
         text-align: center;
         gap: 2rem;
-        flex-direction: column;
     }
 
     .profile-pic {
         width: 180px;
-        height: 180px;
     }
 
     .social-links {
