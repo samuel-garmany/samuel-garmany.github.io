@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
+      - run: npm install tailwindcss @tailwindcss/cli && npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
