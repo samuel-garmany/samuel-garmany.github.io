@@ -18,18 +18,24 @@ This repository hosts my personal website. I'm using this project to experiment 
 ### 💻 Running Locally
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/samuel-garmany/samuel-garmany.github.io.git
    cd samuel-garmany.github.io
    ```
 
-2. **Install dependencies**
+3. **Install dependencies**
+
    ```bash
    npm install
    ```
 
-3. **Start the Tailwind watcher**
+4. **Start the Tailwind watcher**
+
    ```bash
    npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
    ```
-   *(Note: Open `index.html` in your browser to view changes.)*
+
+5. **View the site**
+
+   Open `index.html` in your browser
