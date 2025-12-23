@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
 
-This repository hosts my personal website. I'm mostly using this project to experiment with web development technologies on the side.
+This repository hosts my personal website. I'm using this project to experiment with web development technologies on the side.
 
 ## 🦖 View the Site
 
@@ -16,8 +16,6 @@ This repository hosts my personal website. I'm mostly using this project to expe
 - **GitHub Pages:** Static hosting.
 
 ### 💻 Running Locally
-
-If you'd like to run this project on your own machine:
 
 1. **Clone the repository**
    ```bash
