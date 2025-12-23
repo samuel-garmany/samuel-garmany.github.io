@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/deploy.yml/badge.svg)
 
-This repository hosts my personal website. I'm using this project to experiment with web development technologies on the side.
+This repository hosts my personal website. This project to mostly used to experiment with web development technologies on the side.
 
 ## 🦖 View the Site
 
