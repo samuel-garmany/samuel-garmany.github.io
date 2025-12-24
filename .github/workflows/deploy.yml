@@ -15,12 +15,22 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install && npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies and build CSS
+        run: npm install && npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .
-      - uses: actions/deploy-pages@v4
+
+      - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v4
