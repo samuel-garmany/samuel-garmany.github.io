@@ -3,7 +3,7 @@ fetch('https://api.github.com/repos/samuel-garmany/samuel-garmany.github.io/comm
     .then(d => document.getElementById('last-updated').textContent = new Date(d[0].commit.committer.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
     .catch(() => document.getElementById('last-updated').textContent = 'Unknown');
 
-// Tab switching functionality
+// Tab switching
 function switchTab(tabName) {
     // Hide all tab contents
     document.querySelectorAll('.tab-content').forEach(content => {
