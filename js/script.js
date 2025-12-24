@@ -10,20 +10,20 @@ function switchTab(tabName) {
         content.classList.add('hidden');
     });
 
-    // Remove active state from all tab buttons
+    // Remove active state from all tab buttons and add hover styles back
     document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('border-blue-600', 'text-blue-600', 'dark:text-blue-400', 'dark:border-blue-400');
-        btn.classList.add('border-transparent', 'text-gray-500', 'dark:text-gray-400');
+        btn.classList.remove('border-green-700', 'text-green-700', 'dark:text-green-500', 'dark:border-green-500');
+        btn.classList.add('border-transparent', 'text-gray-500', 'dark:text-gray-400', 'hover:text-gray-700', 'dark:hover:text-gray-300');
     });
 
     // Show selected tab content
     document.getElementById('content-' + tabName).classList.remove('hidden');
 
-    // Add active state to selected tab button
+    // Add active state to selected tab button and remove hover styles
     const activeTab = document.getElementById('tab-' + tabName);
     if (activeTab) {
-        activeTab.classList.remove('border-transparent', 'text-gray-500', 'dark:text-gray-400');
-        activeTab.classList.add('border-blue-600', 'text-blue-600', 'dark:text-blue-400', 'dark:border-blue-400');
+        activeTab.classList.remove('border-transparent', 'text-gray-500', 'dark:text-gray-400', 'hover:text-gray-700', 'dark:hover:text-gray-300');
+        activeTab.classList.add('border-green-700', 'text-green-700', 'dark:text-green-500', 'dark:border-green-500');
     }
 
     // Sync dropdown selection
