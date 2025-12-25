@@ -62,13 +62,13 @@
                             d="M192 64C156.7 64 128 92.7 128 128L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 234.5C512 217.5 505.3 201.2 493.3 189.2L386.7 82.7C374.7 70.7 358.5 64 341.5 64L192 64zM453.5 240L360 240C346.7 240 336 229.3 336 216L336 122.5L453.5 240z" />
                     </svg> Resume
                 </a>
-                <a href="mailto:samuel-garmany@colorado.edu"
+                <a href="#contact" onclick="switchTab('contact')"
                     class="px-4 py-2 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg font-medium transition">
                     <svg class="inline-block w-[1em] h-[1em] align-[-0.125em]" fill="currentColor" viewBox="0 0 640 640"
                         aria-hidden="true">
                         <path
                             d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
-                    </svg> Email
+                    </svg> Contact
                 </a>
             </div>
 
@@ -113,6 +113,7 @@
                 class="block w-full px-4 py-3 text-lg font-medium bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                 <option value="about">About Me</option>
                 <option value="working">What I'm Working On</option>
+                <option value="contact">Contact</option>
             </select>
         </div>
 
@@ -133,6 +134,14 @@
                         d="M240 64C213.5 64 192 85.5 192 112L192 320C192 346.5 213.5 368 240 368L304 368C330.5 368 352 346.5 352 320L352 256L384 256C454.7 256 512 313.3 512 384C512 454.7 454.7 512 384 512L96 512C78.3 512 64 526.3 64 544C64 561.7 78.3 576 96 576L544 576C561.7 576 576 561.7 576 544C576 526.3 561.7 512 544 512L527.1 512C557.5 478 576 433.2 576 384C576 278 490 192 384 192L352 192L352 112C352 85.5 330.5 64 304 64L240 64zM184 416C170.7 416 160 426.7 160 440C160 453.3 170.7 464 184 464L360 464C373.3 464 384 453.3 384 440C384 426.7 373.3 416 360 416L184 416z" />
                 </svg>
                 What I'm Working On
+            </button>
+            <button id="tab-contact" onclick="switchTab('contact')"
+                class="tab-btn px-6 py-3 text-lg font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 640 640" aria-hidden="true">
+                    <path
+                        d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
+                </svg>
+                Contact
             </button>
         </div>
 
@@ -266,6 +275,52 @@
                 </h3>
                 <p class="text-gray-600 dark:text-gray-400 italic">Coming soon...</p>
             </section> -->
+        </div>
+
+        <!-- Contact tab -->
+        <div id="content-contact" class="tab-content hidden">
+            <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+            <p class="mb-6 text-gray-700 dark:text-gray-300">
+                If you'd like to get in touch, please fill out the form below and I'll get back to you as soon as I can!
+            </p>
+
+            <form method="POST" id="contact-form" class="max-w-lg space-y-6">
+                <input type="hidden" name="access_key" value="b6feb2cd-4992-4883-b1a7-cbfb14bad68e">
+                <input type="hidden" name="subject" value="New Submission from garmany.me">
+                <input type="checkbox" name="botcheck" style="display: none;">
+
+                <div>
+                    <label for="name"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                    <input type="text" name="name" id="name" required
+                        class="block w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-green-700 focus:border-green-700 dark:focus:ring-green-500 dark:focus:border-green-500 transition">
+                </div>
+
+                <div>
+                    <label for="email"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                    <input type="email" name="email" id="email" required
+                        class="block w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-green-700 focus:border-green-700 dark:focus:ring-green-500 dark:focus:border-green-500 transition">
+                </div>
+
+                <div>
+                    <label for="message"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                    <textarea name="message" id="message" rows="5" required
+                        class="block w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-green-700 focus:border-green-700 dark:focus:ring-green-500 dark:focus:border-green-500 transition resize-y"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="px-6 py-3 bg-green-700 hover:bg-green-800 dark:bg-green-600 dark:hover:bg-green-700 text-white rounded-lg font-medium transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 640 640" aria-hidden="true">
+                        <path
+                            d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
+                    </svg>
+                    Send Message
+                </button>
+
+                <div id="form-result" class="hidden mt-4 p-4 rounded-lg"></div>
+            </form>
         </div>
 
     </main>
