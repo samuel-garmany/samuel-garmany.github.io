@@ -1,27 +1,14 @@
-// Update "Last Updated" date from GitHub API
+// Update "Last Modified" date from GitHub API
 fetch('https://api.github.com/repos/samuel-garmany/samuel-garmany.github.io/commits?per_page=1')
     .then(r => r.json())
     .then(d => document.getElementById('last-updated').textContent = new Date(d[0].commit.committer.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
     .catch(() => document.getElementById('last-updated').textContent = 'Unknown');
 
-// Update the favicon based on the user's color scheme
-function updateFavicon() {
-    const favicon = document.getElementById('favicon');
-    if (favicon) {
-        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        favicon.href = isDark ? './assets/dna-solid-light.svg' : './assets/dna-solid-full.svg';
-    }
-}
-
-// Set initial favicon and listen for changes
-updateFavicon();
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
-
-// Handle URL hash
+// Handle URL hash on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Check for hash-based tab navigation
+    // Check for hash-based tab navigation 
     if (window.location.hash) {
-        const tabName = window.location.hash.substring(1); // Remove the # from the hash
+        const tabName = window.location.hash.substring(1); // Remove the #
         const validTabs = ['about', 'working', 'contact'];
         if (validTabs.includes(tabName)) {
             switchTab(tabName);
