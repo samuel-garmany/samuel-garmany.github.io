@@ -4,17 +4,17 @@
 
 This repository hosts my personal website. This project to mostly used to experiment with web development technologies on the side.
 
-## 🦖 View the Site
+## View the Site
 
 **[garmany.me](https://garmany.me/)**
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - **[Tailwind CSS](https://tailwindcss.com/):** Used for styling; helps keep the project size minimal.
 - **[Node.js](https://nodejs.org/):** Handles dependency management and runs the Tailwind CLI build process.
 - **GitHub Actions/GitHub Pages:** CI/CD pipeline that builds the CSS and publishes the site.
 
-## 💻 Running Locally
+## Running Locally
 
 1. **Clone the repository**
 
