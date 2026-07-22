@@ -2,7 +2,7 @@
 
 [![Deploy](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/deploy.yml)
 
-This repository hosts my personal website. This project to mostly used to experiment with web development technologies on the side.
+This repository hosts my personal website. This project is mostly used to experiment with web development technologies on the side.
 
 ## View the Site
 
