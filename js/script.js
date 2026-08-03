@@ -73,7 +73,7 @@ function switchTab(tabName) {
 
     // Remove active state from all tab buttons and add hover styles back
     document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('border-green-700', 'text-green-700', 'dark:text-green-500', 'dark:border-green-500');
+        btn.classList.remove('border-teal-600', 'text-teal-600', 'dark:text-teal-400', 'dark:border-teal-400');
         btn.classList.add('border-transparent', 'text-gray-500', 'dark:text-gray-400', 'hover:text-gray-700', 'dark:hover:text-gray-300');
     });
 
@@ -84,7 +84,7 @@ function switchTab(tabName) {
     const activeTab = document.getElementById('tab-' + tabName);
     if (activeTab) {
         activeTab.classList.remove('border-transparent', 'text-gray-500', 'dark:text-gray-400', 'hover:text-gray-700', 'dark:hover:text-gray-300');
-        activeTab.classList.add('border-green-700', 'text-green-700', 'dark:text-green-500', 'dark:border-green-500');
+        activeTab.classList.add('border-teal-600', 'text-teal-600', 'dark:text-teal-400', 'dark:border-teal-400');
     }
 
     // Sync dropdown selection
