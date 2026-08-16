@@ -23,18 +23,32 @@ This repository hosts my personal website. This project is mostly used to experi
    cd samuel-garmany.github.io
    ```
 
-3. **Install dependencies**
+2. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-4. **Start the Tailwind watcher**
+3. **Start the Tailwind watcher**
 
    ```bash
-   npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+   npm run dev
    ```
 
-5. **View the site**
+   Use `npm run build` for a one-off build instead of watching.
+
+4. **View the site**
 
    Open `index.html` in your browser
+
+## Photos
+
+Photos in `assets/` are resized to 1200px on the long edge before being
+committed, which keeps the page under a couple of megabytes:
+
+```bash
+magick photo.jpg -auto-orient -resize '1200x1200>' -quality 82 -strip -interlace Plane assets/photo.jpg
+```
+
+Add the resulting `width` and `height` to the `<img>` tag so the layout doesn't
+shift while the photo loads.
