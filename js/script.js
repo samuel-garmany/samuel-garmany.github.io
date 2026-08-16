@@ -28,8 +28,6 @@ function switchTab(tabName, updateHash = true) {
         // Roving tabindex: the tab strip is a single stop, arrow keys move within it.
         button.tabIndex = isActive ? 0 : -1;
     });
-
-    document.getElementById('tab-select').value = tabName;
 }
 
 // Left/right arrows move between tabs, as expected of an ARIA tablist.
