@@ -50,5 +50,9 @@ committed, which keeps the page under a couple of megabytes:
 magick photo.jpg -auto-orient -resize '1200x1200>' -quality 82 -strip -interlace Plane assets/photo.jpg
 ```
 
-Add the resulting `width` and `height` to the `<img>` tag so the layout doesn't
-shift while the photo loads.
+`-auto-orient` matters: phone photos often store a rotation flag that `-strip`
+would otherwise discard, leaving the photo sideways.
+
+The `<img>` tags deliberately carry no `width`/`height`. The gallery is the last
+thing on the page, so there is nothing below it to push down, and leaving the
+sizes off means a new photo only needs one line of markup.
