@@ -2,7 +2,7 @@
 
 [![Deploy](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/deploy.yml)
 
-This repository hosts my personal website. This project is mostly used to experiment with web development technologies on the side.
+My personal website, which I also use to try things out.
 
 ## View the Site
 
@@ -10,9 +10,9 @@ This repository hosts my personal website. This project is mostly used to experi
 
 ## Tech Stack
 
-- **[Tailwind CSS](https://tailwindcss.com/):** Used for styling; helps keep the project size minimal.
-- **[Node.js](https://nodejs.org/):** Handles dependency management and runs the Tailwind CLI build process.
-- **GitHub Actions/GitHub Pages:** CI/CD pipeline that builds the CSS and publishes the site.
+- **[Tailwind CSS](https://tailwindcss.com/):** Styling, so I don't have to write CSS.
+- **[Node.js](https://nodejs.org/):** Runs the Tailwind build.
+- **GitHub Actions/GitHub Pages:** Builds the CSS and publishes the site on push.
 
 ## Running Locally
 
