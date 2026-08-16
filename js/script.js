@@ -2,8 +2,8 @@
 
 const TAB_NAMES = ['about', 'working', 'contact'];
 
-// Defined once here so the teal accent only has to be changed in one place.
-const ACTIVE_TAB_CLASSES = ['border-teal-600', 'text-teal-600', 'dark:border-teal-400', 'dark:text-teal-400'];
+// Defined once here so the accent color only has to be changed in one place.
+const ACTIVE_TAB_CLASSES = ['border-cyan-700', 'text-cyan-700', 'dark:border-cyan-400', 'dark:text-cyan-400'];
 const INACTIVE_TAB_CLASSES = ['border-transparent', 'text-gray-500', 'dark:text-gray-400', 'hover:text-gray-700', 'dark:hover:text-gray-300'];
 
 let activeTab = 'about';
