@@ -2,7 +2,7 @@
 
 [![Deploy](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/samuel-garmany/samuel-garmany.github.io/actions/workflows/deploy.yml)
 
-This repository hosts my personal website. This project is mostly used to experiment with web development technologies on the side.
+My personal website, which I also use to try things out.
 
 ## View the Site
 
@@ -10,9 +10,9 @@ This repository hosts my personal website. This project is mostly used to experi
 
 ## Tech Stack
 
-- **[Tailwind CSS](https://tailwindcss.com/):** Used for styling; helps keep the project size minimal.
-- **[Node.js](https://nodejs.org/):** Handles dependency management and runs the Tailwind CLI build process.
-- **GitHub Actions/GitHub Pages:** CI/CD pipeline that builds the CSS and publishes the site.
+- **[Tailwind CSS](https://tailwindcss.com/):** Styling, so I don't have to write CSS.
+- **[Node.js](https://nodejs.org/):** Runs the Tailwind build.
+- **GitHub Actions/GitHub Pages:** Builds the CSS and publishes the site on push.
 
 ## Running Locally
 
@@ -23,18 +23,36 @@ This repository hosts my personal website. This project is mostly used to experi
    cd samuel-garmany.github.io
    ```
 
-3. **Install dependencies**
+2. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-4. **Start the Tailwind watcher**
+3. **Start the Tailwind watcher**
 
    ```bash
-   npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+   npm run dev
    ```
 
-5. **View the site**
+   Use `npm run build` for a one-off build instead of watching.
+
+4. **View the site**
 
    Open `index.html` in your browser
+
+## Photos
+
+Photos in `assets/` are resized to 1200px on the long edge before being
+committed, which keeps the page under a couple of megabytes:
+
+```bash
+magick photo.jpg -auto-orient -resize '1200x1200>' -quality 82 -strip -interlace Plane assets/photo.jpg
+```
+
+`-auto-orient` matters: phone photos often store a rotation flag that `-strip`
+would otherwise discard, leaving the photo sideways.
+
+The `<img>` tags deliberately carry no `width`/`height`. The gallery is the last
+thing on the page, so there is nothing below it to push down, and leaving the
+sizes off means a new photo only needs one line of markup.
