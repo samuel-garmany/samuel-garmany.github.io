@@ -79,34 +79,3 @@
     outline-offset: 2px;
   }
 }
-
-/*
-  The 14ers tally: one tick per peak climbed, in groups of five (each group is
-  a 23px repeat of the gradient), then a faint tick for each one left. With 57
-  climbed that's 11 groups plus 2 ticks, 259px wide. When the count changes,
-  move the ::before width by 4px per peak (and 5px more per completed group).
-*/
-@layer components {
-  .tally {
-    display: flex;
-    gap: 2px;
-    height: 1rem;
-  }
-
-  .tally::before {
-    content: "";
-    width: 259px;
-    background: repeating-linear-gradient(to right,
-      var(--ink) 0 2px, transparent 2px 4px,
-      var(--ink) 4px 6px, transparent 6px 8px,
-      var(--ink) 8px 10px, transparent 10px 12px,
-      var(--ink) 12px 14px, transparent 14px 16px,
-      var(--ink) 16px 18px, transparent 18px 23px);
-  }
-
-  .tally::after {
-    content: "";
-    width: 2px;
-    background: var(--rule);
-  }
-}
