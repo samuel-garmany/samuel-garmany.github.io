@@ -5,17 +5,18 @@ const form = document.getElementById('contact-form');
 const submitButton = form.querySelector('button[type="submit"]');
 const result = document.getElementById('form-result');
 
-function showError(message) {
+const GENERIC_ERROR = "Your message didn't send. Check your connection and try again.";
+
+function showResult(message, className) {
     result.textContent = message;
-    result.className = 'mt-4 p-4 rounded-lg bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300';
+    result.className = className;
 }
 
 form.addEventListener('submit', event => {
     event.preventDefault();
     submitButton.disabled = true;
 
-    result.textContent = 'Sending...';
-    result.className = 'mt-4 p-4 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
+    showResult('Sending…', 'text-muted');
 
     fetch(form.action, {
         method: 'POST',
@@ -28,15 +29,14 @@ form.addEventListener('submit', event => {
         .then(async response => {
             const json = await response.json();
             if (!response.ok) {
-                showError(json.message || 'Something went wrong. Please try again later.');
+                showResult(json.message || GENERIC_ERROR, 'text-error');
                 return;
             }
-            result.innerHTML = '<p class="font-medium">Thank you!</p><p>I\'ll get back to you as soon as I can.</p>';
-            result.className = 'mt-4 p-4 rounded-lg bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300';
+            showResult("Message sent. I'll reply by email.", '');
             form.reset();
         })
         // Network failures and non-JSON replies land here; their raw messages
         // ("Failed to fetch", JSON parse errors) aren't meant for visitors.
-        .catch(() => showError('Something went wrong. Please try again later.'))
+        .catch(() => showResult(GENERIC_ERROR, 'text-error'))
         .finally(() => { submitButton.disabled = false; });
 });

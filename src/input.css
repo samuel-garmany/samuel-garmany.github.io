@@ -1,1 +1,112 @@
 @import "tailwindcss";
+
+/* Literata, self-hosted (latin subset, variable weight and optical size). License: assets/fonts/OFL.txt */
+@font-face {
+  font-family: "Literata";
+  src: url("../assets/fonts/literata.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("../assets/fonts/literata-italic.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*
+  Colors are defined once per scheme here, so the markup only names a role
+  (text-muted, border-rule, ...) and never needs dark: variants.
+*/
+:root {
+  color-scheme: light dark;
+  --paper: #ffffff;
+  --ink: #1d2025;
+  --muted: #5d6470;
+  --rule: #e1e4e8;
+  --link: #2a4aa0;
+  --error: #a3262a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15171b;
+    --ink: #e7e5e0;
+    --muted: #a2a7af;
+    --rule: #353a42;
+    --link: #9fb5ef;
+    --error: #f2a0a0;
+  }
+}
+
+@theme inline {
+  --font-serif: "Literata", Georgia, serif;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-link: var(--link);
+  --color-error: var(--error);
+}
+
+@layer base {
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    font-optical-sizing: auto;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--link) 40%, transparent);
+  }
+
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+  }
+}
+
+/*
+  The 14ers tally: one tick per peak climbed, in groups of five (each group is
+  a 23px repeat of the gradient), then a faint tick for each one left. With 57
+  climbed that's 11 groups plus 2 ticks, 259px wide. When the count changes,
+  move the ::before width by 4px per peak (and 5px more per completed group).
+*/
+@layer components {
+  .tally {
+    display: flex;
+    gap: 2px;
+    height: 1rem;
+  }
+
+  .tally::before {
+    content: "";
+    width: 259px;
+    background: repeating-linear-gradient(to right,
+      var(--ink) 0 2px, transparent 2px 4px,
+      var(--ink) 4px 6px, transparent 6px 8px,
+      var(--ink) 8px 10px, transparent 10px 12px,
+      var(--ink) 12px 14px, transparent 14px 16px,
+      var(--ink) 16px 18px, transparent 18px 23px);
+  }
+
+  .tally::after {
+    content: "";
+    width: 2px;
+    background: var(--rule);
+  }
+}
