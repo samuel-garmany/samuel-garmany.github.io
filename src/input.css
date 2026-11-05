@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/*
-  Colors are defined once per scheme here, so the markup only names a role
-  (text-muted, border-rule, ...) and never needs dark: variants.
-*/
 :root {
   color-scheme: light dark;
   --paper: #ffffff;
@@ -42,7 +38,6 @@
 
   a {
     color: var(--link);
-    /* Tailwind's reset strips the underline; put the browser default back. */
     text-decoration-line: underline;
   }
 }

@@ -28,8 +28,6 @@ jobs:
           DATE=$(git log -1 --format=%cd --date=format:'%B %-d, %Y')
           sed -i "s|<span id=\"last-updated\">[^<]*</span>|<span id=\"last-updated\">$DATE</span>|" index.html
 
-      # node_modules is only needed to build the CSS; publishing it would add
-      # ~20 MB to every deploy.
       - name: Remove build-only files
         run: rm -rf node_modules
 

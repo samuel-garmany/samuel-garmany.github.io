@@ -36,10 +36,9 @@
 						<a href="#contact">Contact</a>
 					</p>
 				</div>
-				<img src="assets/me.jpg" alt="Samuel Garmany" width="459" height="612" class="w-20 sm:w-32 shrink-0 aspect-[3/4] object-cover">
+				<img src="assets/me.jpg" alt="Samuel Garmany" width="459" height="612" class="w-20 sm:w-32 shrink-0">
 			</header>
 
-			<!-- Each section: its name hangs in the left margin on wider screens. -->
 			<main class="space-y-14 sm:space-y-20 pb-16 sm:pb-24">
 				<section class="grid sm:grid-cols-[8.5rem_1fr] gap-x-8 gap-y-3">
 					<h2 class="text-muted">Experience</h2>
@@ -49,7 +48,7 @@
 							<p class="italic text-muted">Undergraduate researcher, since January 2026</p>
 							<p class="mt-2">
 								I perform surgeries on prairie voles and write the Python and R code that analyzes our results.
-								I also program the <a href="https://github.com/KravitzLabDevices/FED3">FED3</a> feeding devices, open-source Arduino hardware from the Kravitz Lab, that run our experiments.
+								I also program the <a href="https://github.com/KravitzLabDevices/FED3">FED3</a> feeding devices that run our experiments. They're open-source Arduino hardware from the Kravitz Lab.
 								My work looks at dopamine in the nucleus accumbens during social attachment.
 							</p>
 						</div>
@@ -72,7 +71,6 @@
 					</div>
 				</section>
 
-				<!-- Coursework is kept in sync with the Relevant Coursework section of resume.typ -->
 				<section class="grid sm:grid-cols-[8.5rem_1fr] gap-x-8 gap-y-3">
 					<h2 class="text-muted">Education</h2>
 					<div>
@@ -107,7 +105,7 @@
 					<h2 class="text-muted">Outside of class</h2>
 					<div>
 						<p>
-							I run, camp, and climb. I've done 57 of Colorado's 58 14ers and I'm hoping to finish the last one soon.
+							I run, camp, and climb. I've done 57 of Colorado's 58 14ers, and I'm hoping to finish the last one soon.
 						</p>
 
 						<div class="mt-8 columns-2 gap-4 space-y-5">
@@ -120,16 +118,16 @@
 								<figcaption class="mt-1 text-sm italic text-muted">Little Bear Peak and Blanca Peak, CO</figcaption>
 							</figure>
 							<figure class="break-inside-avoid">
+								<img src="assets/blanca.jpg" alt="Ellingwood Point and Blanca Peak from Little Bear Peak, CO" width="900" height="1200" class="w-full" loading="lazy">
+								<figcaption class="mt-1 text-sm italic text-muted">Ellingwood Point and Blanca Peak from Little Bear Peak, CO</figcaption>
+							</figure>
+							<figure class="break-inside-avoid">
 								<img src="assets/maroon_bells.jpg" alt="Maroon Bells, Aspen, CO" width="1200" height="900" class="w-full" loading="lazy">
 								<figcaption class="mt-1 text-sm italic text-muted">Maroon Bells, Aspen, CO</figcaption>
 							</figure>
 							<figure class="break-inside-avoid">
 								<img src="assets/baby_goat.jpg" alt="Baby mountain goat, Grays Peak, CO" width="900" height="1200" class="w-full" loading="lazy">
 								<figcaption class="mt-1 text-sm italic text-muted">Baby mountain goat, Grays Peak, CO</figcaption>
-							</figure>
-							<figure class="break-inside-avoid">
-								<img src="assets/blanca.jpg" alt="Ellingwood Point and Blanca Peak from Little Bear Peak, CO" width="900" height="1200" class="w-full" loading="lazy">
-								<figcaption class="mt-1 text-sm italic text-muted">Ellingwood Point and Blanca Peak from Little Bear Peak, CO</figcaption>
 							</figure>
 							<figure class="break-inside-avoid">
 								<img src="assets/elbert.jpg" alt="A squirrel on a backpack" width="900" height="1200" class="w-full" loading="lazy">
@@ -144,10 +142,6 @@
 					<div>
 						<p class="mb-5">Send me a message and I'll reply by email.</p>
 
-						<!--
-							The action lets the form still work without JS (Web3Forms accepts a
-							plain POST); js/script.js intercepts it to submit in the background.
-						-->
 						<form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="max-w-[28rem] space-y-4">
 							<input type="hidden" name="access_key" value="b6feb2cd-4992-4883-b1a7-cbfb14bad68e">
 							<input type="hidden" name="subject" value="New Submission from garmany.me">
@@ -172,14 +166,13 @@
 								Send message
 							</button>
 
-							<p id="form-result" class="hidden" role="status" aria-live="polite"></p>
+							<p id="form-result" class="hidden" role="status"></p>
 						</form>
 					</div>
 				</section>
 			</main>
 
 			<footer class="py-8 border-t border-rule text-sm text-muted">
-				<!-- The deploy workflow replaces this span with the date of the last commit. -->
 				Last updated <span id="last-updated">local build</span>.
 				<a href="https://github.com/samuel-garmany/samuel-garmany.github.io">Source on GitHub</a>.
 			</footer>

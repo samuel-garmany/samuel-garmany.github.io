@@ -1,6 +1,3 @@
-// This script runs at the end of <body>, so the DOM is already parsed.
-
-// Contact form: submit in the background so the visitor stays on the page.
 const form = document.getElementById('contact-form');
 const submitButton = form.querySelector('button[type="submit"]');
 const result = document.getElementById('form-result');
@@ -35,8 +32,6 @@ form.addEventListener('submit', event => {
             showResult("Message sent. I'll reply by email.", '');
             form.reset();
         })
-        // Network failures and non-JSON replies land here; their raw messages
-        // ("Failed to fetch", JSON parse errors) aren't meant for visitors.
         .catch(() => showResult(GENERIC_ERROR, 'text-error'))
         .finally(() => { submitButton.disabled = false; });
 });

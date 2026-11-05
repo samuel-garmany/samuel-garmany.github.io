@@ -43,15 +43,8 @@ My personal website, which I also use to try things out.
 
 ## Photos
 
-Photos in `assets/` are resized to 1200px on the long edge before being
-committed, which keeps the page under a couple of megabytes:
+Resize photos before adding them, then give each `<img>` its `width` and `height`:
 
 ```bash
 magick photo.jpg -auto-orient -resize '1200x1200>' -quality 82 -strip -interlace Plane assets/photo.jpg
 ```
-
-`-auto-orient` matters: phone photos often store a rotation flag that `-strip`
-would otherwise discard, leaving the photo sideways.
-
-Give each `<img>` its pixel `width` and `height` (`identify photo.jpg` prints
-them) so the page doesn't jump around as the lazy-loaded photos come in.
