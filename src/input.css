@@ -1,22 +1,5 @@
 @import "tailwindcss";
 
-/* Literata, self-hosted (latin subset, variable weight and optical size). License: assets/fonts/OFL.txt */
-@font-face {
-  font-family: "Literata";
-  src: url("../assets/fonts/literata.woff2") format("woff2");
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Literata";
-  src: url("../assets/fonts/literata-italic.woff2") format("woff2");
-  font-weight: 400 700;
-  font-style: italic;
-  font-display: swap;
-}
-
 /*
   Colors are defined once per scheme here, so the markup only names a role
   (text-muted, border-rule, ...) and never needs dark: variants.
@@ -43,7 +26,6 @@
 }
 
 @theme inline {
-  --font-serif: "Literata", Georgia, serif;
   --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
@@ -56,26 +38,11 @@
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: var(--font-serif);
-    font-size: 1.125rem;
-    line-height: 1.65;
-    font-optical-sizing: auto;
   }
 
   a {
     color: var(--link);
+    /* Tailwind's reset strips the underline; put the browser default back. */
     text-decoration-line: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-    text-decoration-color: color-mix(in srgb, var(--link) 40%, transparent);
-  }
-
-  a:hover {
-    text-decoration-color: currentColor;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--link);
-    outline-offset: 2px;
   }
 }

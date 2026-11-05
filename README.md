@@ -12,7 +12,6 @@ My personal website, which I also use to try things out.
 
 - **[Tailwind CSS](https://tailwindcss.com/):** Styling, so I don't have to write CSS.
 - **[Node.js](https://nodejs.org/):** Runs the Tailwind build.
-- **[Literata](https://github.com/googlefonts/literata):** The only typeface, self-hosted in `assets/fonts` (SIL Open Font License).
 - **GitHub Actions/GitHub Pages:** Builds the CSS and publishes the site on push.
 
 ## Running Locally
